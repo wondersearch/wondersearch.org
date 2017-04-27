@@ -45,15 +45,26 @@
 
   Search The Web
   <br>
-  <input/>
+  <input type="text" id="publicq"/>
   <br>
-  <button type="button">Search</button>
-  <button type="button">Lucky</button>
+  <button id="publicsearch" name="publicsearch" type="button">Search</button>
+  <button id="publiclucky" name="publiclucky" type="button">Lucky</button>
   </form>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.min.js"></script>
+  <script>
+  var publicsearchEl = document.getElementById('publicsearch')
+  publicsearchEl.addEventListener("click", function() {
+    var publicqEl = document.getElementById('publicq')
+    var q = publicqEl.value
+    console.log('this', this)
+    console.log('publicqEl.value', publicqEl.value)
+    var SEURL = 'https://www.qwant.com/?q='
+    location.href = SEURL + q
+  })
+  </script>
 </body>
 </html>
